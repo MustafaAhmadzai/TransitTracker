@@ -1,19 +1,23 @@
-Install following pip packages using CLI commands below:
+# Transit Tracker
 
-python -m pip install uvicorn
+A simple transit tracker utilizing gRPC, FastAPI, and React.
+
+## Use the following pip commands in your terminal:
+
+```bash
 python -m pip install fastapi uvicorn
-python -m pip install grpcio grpcio-tools
 python -m pip install grpcio grpcio-tools requests
+```
 
-Using either VScode terminal or CLI terminal, run the predictions_client.py:
-python predictions_client.py
+## Run the Client and Server
+```bash
+python predictions_client.py  # Run the gRPC client
+python grpc_server.py         # Run the gRPC server
+```
 
-Then compile the server:
-python grpc_server.py
-
-
-Lastly, change the directory to frontend on VScode terminal and run the react page:
+## Frontend Setup
+```bash
 cd frontend
-
+npm install
 npm start
-
+```
