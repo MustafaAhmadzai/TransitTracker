@@ -1,0 +1,70 @@
+/* General container styles */
+.route-planner-container {
+    display: flex;
+    flex-direction: column; /* Ensure everything is stacked vertically */
+    align-items: center;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Centers the content inside the container */
+  }
+  
+  /* Style for the Route Planner heading */
+  h2 {
+    font-size: 2rem; /* Adjusts the size of the Route Planner text */
+    margin-bottom: 20px; /* Adds space between the h2 and the content below */
+    color: #333;
+  }
+  
+  /* Style for the dropdown container */
+  .dropdown-container {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px; /* Space between dropdowns */
+  }
+  
+  /* Label styling */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Styling for the dropdown select */
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Space between select and next element */
+  }
+  
+  /* Styling for the confirm button */
+  .confirm-button {
+    padding: 15px 30px; /* Increased padding for bigger button */
+    font-size: 1.2rem; /* Increased font size */
+    background-color: #2c3e50; /* Set to the desired theme color */
+    color: white; /* White text for contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+    margin-bottom: 10px; /* Increased space below button */
+  }
+  
+  /* Disabled state for the confirm button */
+  .confirm-button:disabled {
+    background-color: #ccc; /* Grey out the button when disabled */
+    cursor: not-allowed;
+  }
+  
+  /* Styling for the prediction result */
+  .prediction-result {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
