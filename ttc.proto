@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package ttc;
+
+service RouteListService {
+    // Fetch the list of routes for the agency
+    rpc GetRouteList(RouteListRequest) returns (RouteListResponse);
+}
+
+service RouteConfigService {
+    // Fetch details for a specific route
+    rpc GetRouteConfig(RouteConfigRequest) returns (RouteConfigResponse);
+}
+
+service PredictionsService {
+    // Fetch prediction for next vehicle arrival
+    rpc GetPrediction(PredictionRequest) returns (PredictionResponse);
+}
+
+// Request and Response types
+
+message RouteListRequest {
+    string agency_tag = 1;
+}
+
+message RouteListResponse {
+    repeated Route routes = 1;
+}
+
+message Route {
+    string route_tag = 1;
+    string route_name = 2;
+}
+
+message RouteConfigRequest {
+    string agency_tag = 1;
+    string route_tag = 2; 
+}
+
+message RouteConfigResponse {
+    repeated RouteDirection directions = 1;
+}
+
+message RouteDirection{
+    string direction_tag = 1;
+    string direction_title = 2;
+    string direction_name = 3;
+    repeated RouteStop stops = 4;
+}
+
+message RouteStop {
+    string stop_id = 1;
+    string stop_name = 2;
+    string stop_tag = 3;
+}
+
+
+message PredictionRequest {
+    string agency_tag = 1;  // Example: "ttc"
+    string stop_id = 2;     // Stop ID
+    string route_tag = 3;   // Route Tag
+}
+
+message PredictionResponse {
+    repeated PredictionFinal next_bus_arrival = 1;  // Next arrival time in minutes
+}
+
+message PredictionFinal{
+    string direction_title = 1;
+    string prediction = 2;
+}
